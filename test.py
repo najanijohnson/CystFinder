@@ -18,6 +18,7 @@ def process_images(input_folder_path, output_folder_path):
     summary_data = []
     all_folders_data = []
     consolidated_analysis_data = []
+    raw_analysis_data = []
 
     for root, dirs, files in os.walk(input_folder_path):
         relative_path = os.path.relpath(root, input_folder_path)
@@ -55,6 +56,14 @@ def process_images(input_folder_path, output_folder_path):
                     num_cysts = len(df_predictions)
                     folder_areas.extend(df_predictions['Area'].tolist())
                     folder_cyst_counts.append(num_cysts)
+                    
+                    # Add individual cyst areas to raw analysis data
+                    for area in df_predictions['Area']:
+                        raw_analysis_data.append({
+                            "folder name": relative_path,
+                            "Image name": os.path.join(relative_path, file),
+                            "cyst area": area
+                        })
                 else:
                     avg_cyst_area = 0
                     std_dev_cyst_area = 0
@@ -112,8 +121,12 @@ def process_images(input_folder_path, output_folder_path):
     df_consolidated_analysis = pd.DataFrame(consolidated_analysis_data)
     df_consolidated_analysis.to_csv(os.path.join(output_folder_path, "analysis.csv"), index=False)
 
+    # Save raw analysis data
+    df_raw_analysis = pd.DataFrame(raw_analysis_data)
+    df_raw_analysis.to_csv(os.path.join(output_folder_path, "analysis_raw.csv"), index=False)
+
 def main():
-    input_folder_path = "C:\\Users\\najan\\Downloads\\Archive"
+    input_folder_path = "C:\\Users\\najan\\Downloads\\Micrographia Images for Analysis-selected"
     output_folder_path = "C:\\Users\\najan\\OneDrive - University at Albany - SUNY\\codez python\\cyst_finder\\predictions"
     process_images(input_folder_path, output_folder_path)
 
