@@ -16,7 +16,7 @@ function processAndConvert(inputDir, outputDir, baseName) {
     open(inputDir + baseName + "_TRANS.tiff");
     // Set the minimum and maximum intensity values
     setMinAndMax(0, 150);
-    // Rename the window to "Trans" 
+    // Rename the window to "Trans" for easy reference
     selectWindow(baseName + "_TRANS.tiff");
     rename("Trans");
 
@@ -26,14 +26,14 @@ function processAndConvert(inputDir, outputDir, baseName) {
     // Save the merged image as a JPEG
     saveAs("Jpeg", outputDir + baseName + ".jpg");
 
-    // Close the windows 
+    // Close the windows to free up memory and keep the workspace clean
     close("Red");
     close("Trans");
     close("Composite");
 }
 
 
-// Enable batch mode to speed up processing 
+// Enable batch mode to speed up processing and prevent window flickering
 setBatchMode(true);
 list = getFileList(inputDir); // Get list of all files in the input directory
 
