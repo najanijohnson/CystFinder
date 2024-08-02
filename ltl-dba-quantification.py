@@ -74,8 +74,8 @@ def process_images(input_path, output_folder):
         
         # Calculate totals
         total_tubules = sum(class_counts.values())
-        LTL_percentage = (class_counts["LTL- mCherry-"] / total_tubules * 100) if total_tubules > 0 else 0
-        DBA_percentage = (class_counts["DBA- mCherry-"] / total_tubules * 100) if total_tubules > 0 else 0
+        LTL_percentage = (class_counts[api_classes[2]] / total_tubules * 100) if total_tubules > 0 else 0
+        DBA_percentage = (class_counts[api_classes[0]] / total_tubules * 100) if total_tubules > 0 else 0
         LTL_DBA_percentage = (LTL_DBA_mCherry_count / total_tubules * 100) if total_tubules > 0 else 0
         
         # Prepare the row for image summary

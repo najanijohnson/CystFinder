@@ -106,7 +106,7 @@ def process_images(input_path, output_folder):
             'mCherry+ Tubules': counts['mCherry+ Tubules'],
             'Total Tubules': counts['Total Tubules'],
             'Avg mCherry+ tubules': avg_mCherry_pos,
-            'Avg mCherry- tubules': avg_mCherry_neg,
+            'Avg mCherry- tubules': avg_mCherry_neg, 
             'Avg Total Tubules': avg_total_tubules,
             'Avg % mCherry+ tubules': avg_mCherry_pos_percentage
         })
