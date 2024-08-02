@@ -90,7 +90,7 @@ def process_images(input_folder_path, output_folder_path):
             folder_cyst_counts = []
 
             for file in files:
-                if file.lower().endswith(('.jpg', '.jpeg', '.png')):
+                if file.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.webp')):
                     image_path = os.path.join(root, file)
                     df_predictions = process_image(image_path, output_dir, new_relative_path)
 
@@ -104,7 +104,7 @@ def process_images(input_folder_path, output_folder_path):
             if folder_areas:
                 all_folders_data.append((folder_areas, folder_cyst_counts, new_relative_path, output_dir))
 
-    elif os.path.isfile(input_folder_path) and input_folder_path.lower().endswith(('.jpg', '.jpeg', '.png')):
+    elif os.path.isfile(input_folder_path) and input_folder_path.lower().endswith(('.jpg', '.jpeg', '.png', '.bmp', '.webp')):
         relative_path = os.path.splitext(os.path.basename(input_folder_path))[0] + "_prediction"
         output_dir = os.path.join(output_folder_path, relative_path)
         df_predictions = process_image(input_folder_path, output_dir, relative_path)
