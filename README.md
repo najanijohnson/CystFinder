@@ -33,18 +33,20 @@ This ImageJ macro takes a folder full of TIFF images and converts them to JPEG f
 
 Usage:
 1. Open ImageJ.
-2. Run the macro by opening `Macro.ijm` in ImageJ.
-3. Follow the prompts to select the input folder containing TIFF images.
-4. The macro will process the images and save the converted JPEGs in the specified output folder.
+2. Navigate to File -> Open, and then open this file on your device
+3. Navigate to where it says "// Define input and output directories" and replace my directories with the ones on your device that you want to convert.
+4. Run the macro by pressing the run button in ImageJ.
+5. The macro will process the images and save the converted JPEGs in the specified output folder.
 
 ### `mcherry_quantification.ijm`
 This ImageJ macro processes a folder full of TIFF images specific to mcherry quantification. It adjusts the saturation and merges two images.
 
 Usage:
 1. Open ImageJ.
-2. Run the macro by opening `mcherry_quantification.ijm` in ImageJ.
-3. Follow the prompts to select the input folder containing TIFF images.
-4. The macro will adjust the saturation, merge the images, and save the results in the specified output folder.
+2. Navigate to File -> Open, and then open this file on your device
+3. Navigate to where it says "// Define input and output directories" and replace my directories with the ones on your device that you want to convert.
+4. Run the macro by pressing the run button in ImageJ.
+5. The macro will adjust the saturation, merge the images, and save the results in the specified output folder.
 
 ### `requirements.txt`
 This file lists the Python dependencies required for the project. Install them using:
@@ -62,5 +64,5 @@ This file lists the Python dependencies required for the project. Install them u
 2. Run the desired script or macro as outlined above.
 3. Check the output directory for the processed images and results.
 
-**Note:** The output directory will be created within the location where you have the repository downloaded.
+**Note:** ImageJ needs to be installed to run these Macros don't use the browser options. Also, another reminder that the output directory will be created within the location where you have the repository downloaded.
 
