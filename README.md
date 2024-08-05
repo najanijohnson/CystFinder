@@ -6,16 +6,27 @@ This project contains various scripts and ImageJ macros for processing and analy
 This script processes images to identify and quantify cysts.
 
 Usage:
-python cyst_finder.py [input_path] [output_directory]
+python cyst_finder.py 
+- After you run the file, it will prompt you for an input_path
 - `input_path`: Path to a single image file or a directory containing multiple images.
-- `output_directory`: Path to the directory where the processed images and results will be saved.
+- `output_directory`: Path to the directory where the processed images and results will be saved. Note this will be where the repo is saved on your device.
 
 ### `ltl-dba-quantification.py`
-This script quantifies images using the LTL-DBA method.
+This script  designed to automate LTL-DBA quantification.
 
-python ltl-dba-quantification.py [input_path] [output_directory]
+python ltl-dba-quantification.py 
+- After you run the file, it will prompt you for an input_path
 - `input_path`: Path to a single image file or a directory containing multiple images.
-- `output_directory`: Path to the directory where the processed images and results will be saved.
+- `output_directory`: Path to the directory where the processed images and results will be saved. Note this will be where the repo is saved on your device.
+
+### `mcherry_quantification.py`
+This Python script is designed to automate mcherry quantification different than the `mcherry_quantification.ijm` macro which is used to create the images to run within this file.
+
+Usage:
+python mcherry_quantification.py
+- After you run the file, it will prompt you for an input_path
+- `input_path`: Path to a single image file or a directory containing multiple images.
+- `output_directory`: Path to the directory where the processed images and results will be saved. Note this will be where the repo is saved on your device.
 
 ### `Macro.ijm`
 This ImageJ macro takes a folder full of TIFF images and converts them to JPEG format.
@@ -35,18 +46,9 @@ Usage:
 3. Follow the prompts to select the input folder containing TIFF images.
 4. The macro will adjust the saturation, merge the images, and save the results in the specified output folder.
 
-### `mcherry_quantification.py`
-This Python script is designed to automate mcherry quantification similar to the `mcherry_quantification.ijm` macro.
-
-Usage:
-python mcherry_quantification.py [input_path] [output_directory]
-- `input_path`: Path to a single image file or a directory containing multiple images.
-- `output_directory`: Path to the directory where the processed images and results will be saved.
-
 ### `requirements.txt`
 This file lists the Python dependencies required for the project. Install them using:
 -pip install -r requirements.txt
-
 
 ## Installation
 
