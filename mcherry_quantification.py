@@ -7,7 +7,7 @@ import shutil
 rf = Roboflow(api_key="y9we51qZweag8DJcdu4g")  # Replace with your actual API key
 
 # Access the specific project and version
-project = rf.workspace().project("20240729_invivo18_miriam")
+project = rf.workspace().project("merge_0214-07292024")
 model = project.version(1).model
 
 # Define the classes as used in the API

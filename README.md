@@ -12,7 +12,7 @@ python cyst_finder.py
 - `output_directory`: Path to the directory where the processed images and results will be saved. Note this will be where the repo is saved on your device.
 
 ### `ltl-dba-quantification.py`
-This script  designed to automate LTL-DBA quantification.
+ This script is designed to quantify LTL+ and DBA+ kidney tubules in microscopy slides stained with LTL (GFP), DBA (Cy5), and mCherry (injected cargo of interest). DAPI is also shown in blue.
 
 python ltl-dba-quantification.py 
 - After you run the file, it will prompt you for an input_path
@@ -20,7 +20,7 @@ python ltl-dba-quantification.py
 - `output_directory`: Path to the directory where the processed images and results will be saved. Note this will be where the repo is saved on your device.
 
 ### `mcherry_quantification.py`
-This Python script is designed to automate mcherry quantification different than the `mcherry_quantification.ijm` macro which is used to create the images to run within this file.
+This script is designed to quantify mCherry+ kidney tubules in microscopy slides. Themcherry_quantification.ijm macro should be used to create the images to run with this script.
 
 Usage:
 python mcherry_quantification.py
@@ -29,7 +29,7 @@ python mcherry_quantification.py
 - `output_directory`: Path to the directory where the processed images and results will be saved. Note this will be where the repo is saved on your device.
 
 ### `Macro.ijm`
-This ImageJ macro takes a folder full of TIFF images and converts them to JPEG format.
+This ImageJ macro converts all TIFF images in a folder into JPEG format.
 
 Usage:
 1. Open ImageJ.
@@ -39,7 +39,7 @@ Usage:
 5. The macro will process the images and save the converted JPEGs in the specified output folder.
 
 ### `mcherry_quantification.ijm`
-This ImageJ macro processes a folder full of TIFF images specific to mcherry quantification. It adjusts the saturation and merges two images.
+This ImageJ macro merges the mCherry and brightfield channels for given code and sets the saturation to a given value for use with quantification in mCherry_quantification.py.
 
 Usage:
 1. Open ImageJ.
@@ -64,5 +64,5 @@ This file lists the Python dependencies required for the project. Install them u
 2. Run the desired script or macro as outlined above.
 3. Check the output directory for the processed images and results.
 
-**Note:** ImageJ needs to be installed to run these Macros don't use the browser options. Also, another reminder that the output directory will be created within the location where you have the repository downloaded.
+**Note:** You must have the Desktop version of ImageJ installed to run the macros. Do not use the browser version. Also, reminder that the output directory will be created within the location where you have the repository downloaded.
 
